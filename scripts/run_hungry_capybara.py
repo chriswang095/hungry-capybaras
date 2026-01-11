@@ -1,5 +1,12 @@
 import pygame, random, math
 from pygame import K_ESCAPE, SurfaceType
+from pathlib import Path
+
+repo_root = Path(__file__).resolve().parent
+sprites_dir = repo_root / 'sprites'
+capybara_file = sprites_dir / 'capybara.png'
+carrot_file = sprites_dir / 'carrot.png'
+shrub_file = sprites_dir / 'shrub.png'
 
 class Game:
     def __init__(self):
@@ -28,9 +35,9 @@ class Game:
         self.spawn_flag = None
 
         # Load all images
-        self.capybara_img = pygame.image.load('capybara.png')
-        self.shrub_img = pygame.image.load('shrub.png')
-        self.carrot_img = pygame.image.load('carrot.png')
+        self.capybara_img = pygame.image.load(str(capybara_file))
+        self.shrub_img = pygame.image.load(str(carrot_file))
+        self.carrot_img = pygame.image.load(str(shrub_file))
 
         self.new_game()
 
